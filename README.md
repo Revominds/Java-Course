@@ -53,7 +53,7 @@
 
 ### Spinner
 
-```commandline
+```java
         public static class Spinner {
         public static void spin(int durationMs) throws InterruptedException {
 
