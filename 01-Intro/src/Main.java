@@ -3,6 +3,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static class ANSI {
+        
         public static final String RESET = "\u001B[0m";
         public static final String RED = "\u001B[31m";
         public static final String GREEN = "\u001B[32m";
@@ -12,7 +13,7 @@ public class Main {
         public static final String CYAN = "\u001B[36m";
         public static final String WHITE = "\u001B[37m";
     }
-
+ 
     public static class DateTimeExample {
         public static void showDateTime() {
             LocalDateTime now = LocalDateTime.now();
@@ -27,7 +28,7 @@ public class Main {
         public static void printHeader(String title) {
             System.out.println("=================================");
             System.out.println(title.toUpperCase());
-            System.out.println("=================================");
+            System.out.println("=================================\n\n");
         }
     }
 
@@ -39,15 +40,16 @@ public class Main {
             long end = System.currentTimeMillis() + durationMs;
 
             while (System.currentTimeMillis() < end) {
-                System.out.print("\rLoading " + frames[i++ % frames.length]);
+                System.out.print(ANSI.YELLOW + "\rLoading " + frames[i++ % frames.length]);
                 Thread.sleep(100);
             }
 
-            System.out.print(ANSI. YELLOW + "\rDone!      \n");
+            System.out.print( "\rDone     \n\n");
         }
     }
 
     /* MAIN MUST BE HERE */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
 
         try {
@@ -68,7 +70,7 @@ public class Main {
         System.out.print(ANSI.CYAN);
         System.out.println("[1] I like rice");
         System.out.println("[2] Rice is really good");
-        System.out.println("[3] Buy some rice for me");
+        System.out.println("[3] Buy some rice for me\n\n");
         System.out.print(ANSI.RESET);
 
         try {
